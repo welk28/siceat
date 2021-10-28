@@ -1,0 +1,60 @@
+
+/* .preloader {
+	background: url(cargando.gif) no-repeat center #fff;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0.6;
+} */
+.bolgral{
+	font-size:11px;
+}
+	
+	.vertical{
+	
+		/*writing-mode: vertical-rl;
+ text-orientation: upright; 
+		font-size:9px;*/
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+		font-size:9px;
+		-webkit-transform:rotate(-180deg); 
+	}
+
+/*
+transform-origin: left;
+		transform: rotate( -90deg);
+		display: inline-block;
+    bottom: 0;
+    margin: 0 0 0 10px;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    font-size: 1.11111rem;
+    text-align: left;
+    white-space: nowrap;
+*/
+
+	/*
+	text-orientation: mixed;
+text-orientation: upright;
+text-orientation: sideways-right;
+text-orientation: sideways;
+text-orientation: use-glyph-orientation;
+
+Valores
+mixed
+Rota los caracteres de escritura horizontal 90° en sentido de las manecillas del reloj. Establece los caracteres de escritura vertical de forma natural. Este es el valor por defecto.
+upright
+Establece los caracteres de escritura horizontal de forma natural (pero se presentan de arriba hacia abajo), de igual manera establece de forma natural los glifos para escritura vertical. Note que ésta palabra clave causa que todos los caracteres sean considerados de forma izquierda-a-derecha: el valor utilizado para direction es forzado a ser ltr.
+sideways
+Causa que los caracteres sean presentados de la forma en que se presentarían de manera horizontal, pero con la línea de escritura rotada 90° en sentido de las manecillas del reloj.
+sideways-right
+Un alias para sideways que se mantiene para propositos de compatibilidad.
+use-glyph-orientation
+En elementos SVG, ésta palabra clave produce que sea utilizado el valor de las propiedades SVG desaprobadas glyph-orientation-vertical y glyph-orientation-horizontal.
+	*/
