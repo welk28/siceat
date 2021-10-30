@@ -154,7 +154,8 @@ where g.idg=h.idg and p.rfcp=h.rfcp and h.idmat=m.idmat and h.idp='$periodo' and
 		return $resultado->result();
 	}
 	public function getReloj(){
-		$consulta="select * from reloj";
+		$turno=$this->session->userdata("turno");
+		$consulta="select * from reloj where turno='$turno'";
 		$resultado=$this->db->query($consulta);
 		return $resultado->result();
 	}

@@ -56,7 +56,7 @@
                         <td><?php echo $ho->grado."".$ho->grupo;?> </td>
                         <!--td><?php echo $ho->idh;?> <br> <?php echo $ho->idmat;?> </td> -->
                         
-                        <td><?php echo $ho->nommat;?><br> <?php echo $ho->nomp;?> </td>
+                        <td><?php echo $ho->idh."/".$ho->nommat;?><br> <?php echo $ho->nomp;?> </td>
                         <?php //invocamos la instancia y el modelo
                           $ci = &get_instance();
                           $ci->load->model("Horario_model");
