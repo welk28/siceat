@@ -172,12 +172,14 @@ class Alumno extends CI_Controller {
 		$grado= $this->input->post("grado");
 		$grupo= $this->input->post("grupo");
 		
+		//print_r($_POST);
 		$data  = array(
       'alumnos' => $this->Alumno_model->getAlumnosI($grado, $grupo),
 			'horarios' => $this->Alumno_model->getHorarios($grado, $grupo),
 			'grado'=> $grado,
 			'grupo'=> $grupo
 		);
+		//print_r($data);
 		$this->load->view("layouts/header");
 		$this->load->view("admin/addgpo",$data);
 		$this->load->view("layouts/footer");
@@ -197,6 +199,23 @@ class Alumno extends CI_Controller {
 		);
 		$this->load->view("layouts/header");
 		$this->load->view("admin/addtaller",$data);
+		$this->load->view("layouts/footer");
+	}
+
+	public function inscribeMe(){
+		$grado= $this->input->post("grado");
+		$idh= $this->input->post("idh");
+		$nommat= $this->input->post("nommat");
+		$idmat= $this->input->post("idmat");
+		
+		$data  = array(
+      'alumnos' => $this->Alumno_model->getAlumnosMe($idmat, $grado),
+			'grado'=> $grado,
+			'nommat'=> $nommat,
+			'idh'=> $idh
+		);
+		$this->load->view("layouts/header");
+		$this->load->view("admin/addme",$data);
 		$this->load->view("layouts/footer");
 	}
 

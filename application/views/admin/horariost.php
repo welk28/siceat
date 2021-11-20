@@ -66,8 +66,19 @@
                         
                         <td align="center">
                           <?php if($cant>0): ?>
-                            <a href="#" class="btn btn-sm btn-success" title="Inscrito"><i class="far fa-check-circle"></i></a>
                             
+                            <div class="btn-group">
+                            <form class="frmgrupo" action="<?php echo base_url();?>admin/alumno/inscribeTaller" method="post">
+                              <input type="hidden" name="grado" value="<?php echo $ho->grado; ?>" id="">
+                              <input type="hidden" name="idmat" value="<?php echo $ho->idmat; ?>" id="">
+                              <input type="hidden" name="nommat" value="<?php echo $ho->nommat; ?>" id="">
+                              <input type="hidden" name="idh" value="<?php echo $ho->idh; ?>" id="">
+                              <button type="submit" class="btn btn-sm btn-success" title="Inscribir a taller">
+                              <i class="far fa-check-circle"></i>
+                              </button>                                
+                              </a>    
+                            </form>                           
+                            </div>
                           <?php else: ?>
                             <div class="btn-group">
                             <form class="frmgrupo" action="<?php echo base_url();?>admin/alumno/inscribeTaller" method="post">

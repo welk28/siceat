@@ -209,10 +209,11 @@
           <li class="nav-item dropdown">
             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Horario</a>
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-              <li><a href="<?php echo base_url();?>admin/horario/addhrsearch" class="dropdown-item">Agregar</a></li>
               <li><a href="<?php echo base_url();?>admin/horario" class="dropdown-item">Lista </a></li>
+              <li><a href="<?php echo base_url();?>admin/horario/addhrsearch" class="dropdown-item">Agregar materia</a></li>
               <li><a href="<?php echo base_url();?>admin/horarios" class="dropdown-item">Inscribir Grupo</a></li>
 							<li><a href="<?php echo base_url();?>admin/horariost" class="dropdown-item">Inscribir a taller</a></li>
+							<li><a href="<?php echo base_url();?>admin/horariosme" class="dropdown-item">Inscribir Materia a taller</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

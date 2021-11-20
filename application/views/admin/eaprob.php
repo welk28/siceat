@@ -259,13 +259,13 @@
   										<td>
   											<?php
 												if($trim->val==1){
-													$primeroR= $this->Reportes_model->ReprobadoTr11($materia->idmat); echo $primeroR;
+													$primeroR= $this->Reportes_model->ReprobadoTr11($materia->idmat); 
 												}else{
 													if($trim->val==2){
-														$primeroR= $this->Reportes_model->ReprobadoTr21($materia->idmat); echo $primeroR;
+														$primeroR= $this->Reportes_model->ReprobadoTr21($materia->idmat); 
 													}else{
 														if($trim->val==3){
-															$primeroR= $this->Reportes_model->ReprobadoTr31($materia->idmat); echo $primeroR;
+															$primeroR= $this->Reportes_model->ReprobadoTr31($materia->idmat); 
 														}
 													}
 												}	
@@ -277,13 +277,13 @@
   										<td>
   											<?php
 												if($trim->val==1){
-													$segundoR= $this->Reportes_model->ReprobadoTr12($materia->idmat); echo $segundoR;
+													$segundoR= $this->Reportes_model->ReprobadoTr12($materia->idmat); 
 												}else{
 													if($trim->val==2){
-														$segundoR= $this->Reportes_model->ReprobadoTr22($materia->idmat); echo $segundoR;
+														$segundoR= $this->Reportes_model->ReprobadoTr22($materia->idmat); 
 													}else{
 														if($trim->val==3){
-															$segundoR= $this->Reportes_model->ReprobadoTr32($materia->idmat); echo $segundoR;
+															$segundoR= $this->Reportes_model->ReprobadoTr32($materia->idmat); 
 														}
 													}
 												}
@@ -295,13 +295,13 @@
   										<td>
   											<?php
 												if($trim->val==1){
-													$terceroR= $this->Reportes_model->ReprobadoTr13($materia->idmat); echo $terceroR;
+													$terceroR= $this->Reportes_model->ReprobadoTr13($materia->idmat); 
 												}else{
 													if($trim->val==2){
-														$terceroR= $this->Reportes_model->ReprobadoTr23($materia->idmat); echo $terceroR;
+														$terceroR= $this->Reportes_model->ReprobadoTr23($materia->idmat); 
 													}else{
 														if($trim->val==3){
-															$terceroR= $this->Reportes_model->ReprobadoTr33($materia->idmat); echo $terceroR;
+															$terceroR= $this->Reportes_model->ReprobadoTr33($materia->idmat); 
 														}
 													}
 												}
@@ -318,13 +318,13 @@
   										<td>
   											<?php
 												if($trim->val==1){
-													$primeroS= $this->Reportes_model->SinCalifTr11($materia->idmat); echo $primeroS;
+													$primeroS= $this->Reportes_model->SinCalifTr11($materia->idmat); 
 												}else{
 													if($trim->val==2){
-														$primeroS= $this->Reportes_model->SinCalifTr21($materia->idmat); echo $primeroS;
+														$primeroS= $this->Reportes_model->SinCalifTr21($materia->idmat); 
 													}else{
 														if($trim->val==3){
-															$primeroS= $this->Reportes_model->SinCalifTr31($materia->idmat); echo $primeroS;
+															$primeroS= $this->Reportes_model->SinCalifTr31($materia->idmat); 
 														}
 													}
 												}
@@ -336,13 +336,13 @@
   										<td>
   											<?php
 												if($trim->val==1){
-													$segundoS= $this->Reportes_model->SinCalifTr12($materia->idmat); echo $segundoS;
+													$segundoS= $this->Reportes_model->SinCalifTr12($materia->idmat); 
 												}else{
 													if($trim->val==2){
-														$segundoS= $this->Reportes_model->SinCalifTr22($materia->idmat); echo $segundoS;
+														$segundoS= $this->Reportes_model->SinCalifTr22($materia->idmat); 
 													}else{
 														if($trim->val==3){
-															$segundoS= $this->Reportes_model->SinCalifTr32($materia->idmat); echo $segundoS;
+															$segundoS= $this->Reportes_model->SinCalifTr32($materia->idmat); 
 														}
 													}
 												}
@@ -353,13 +353,13 @@
   										<td>
   											<?php
 												 if($trim->val==1){
-												 	$terceroS= $this->Reportes_model->SinCalifTr13($materia->idmat); echo $terceroS;
+												 	$terceroS= $this->Reportes_model->SinCalifTr13($materia->idmat); 
 												}else{
 													if($trim->val==2){
-														$terceroS= $this->Reportes_model->SinCalifTr23($materia->idmat); echo $terceroS;
+														$terceroS= $this->Reportes_model->SinCalifTr23($materia->idmat); 
 													}else{
 														if($trim->val==3){
-															$terceroS= $this->Reportes_model->SinCalifTr33($materia->idmat); echo $terceroS;
+															$terceroS= $this->Reportes_model->SinCalifTr33($materia->idmat); 
 														}
 													}
 												}

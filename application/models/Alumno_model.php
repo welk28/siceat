@@ -5,7 +5,7 @@ class Alumno_model extends CI_Model {
 	public function getAlumnos(){
 		$periodo= $this->session->userdata("periodo");
 		$turno=$this->session->userdata("turno");
-		$resultado=$this->db->query("select distinct a.matricula, a.nom, a.app, a.apm, a.sexo, a.fecnac, a.grado, a.idt , t.nomt
+		$resultado=$this->db->query("select distinct a.matricula, a.nom, a.app, a.apm, a.sexo, a.fecnac, a.grado, a.grupo, a.idt , t.nomt
 									from periodo p,horario h, cursa c, alumno a, taller t 
 									where t.idt=a.idt and a.matricula=c.matricula and h.idh=c.idh and p.idp=h.idp and a.turno='$turno' and p.idp='$periodo';");
 
@@ -112,7 +112,7 @@ class Alumno_model extends CI_Model {
 	public function getHorarios($grado, $grupo){
 		$periodo= $this->session->userdata("periodo");
 		$turno=$this->session->userdata("turno");
-		$resultados=$this->db->query("select h.idh, g.grado, g.grupo, h.idmat, m.nommat from materia m, horario h, grupo g where m.idmat=h.idmat and g.idg=h.idg and h.turno='$turno' and g.grado=$grado and g.grupo='$grupo' and h.idp='$periodo' and not exists (select t.idt from taller t where t.idt=h.idmat)");
+		$resultados=$this->db->query("select h.idh, g.grado, g.grupo, h.idmat, m.nommat from materia m, horario h, grupo g where m.idmat=h.idmat and g.idg=h.idg and h.turno='$turno' and g.grado=$grado and g.grupo='$grupo' and h.idp='$periodo' and not exists (select t.idt from taller t where t.idt=h.idmat) and not EXISTS (select me.idt from materiaextra me WHERE h.idmat=me.idmat)");
 		$resultados->result();
 
 		if ($resultados->num_rows() > 0) {
@@ -154,6 +154,21 @@ class Alumno_model extends CI_Model {
 		}
 		
 	}
+	public function getAlumnosMe($idmat, $grado){
+		$periodo= $this->session->userdata("periodo");
+		$turno=$this->session->userdata("turno");
+
+    $resultados=$this->db->query("SELECT * FROM alumno WHERE grado=$grado AND turno='$turno' AND STATUS=1 AND idt=(SELECT idt FROM materiaextra WHERE idmat='$idmat')");
+		$resultados->result();
+
+		if ($resultados->num_rows() > 0) {
+			return $resultados->result();
+		}
+		else{
+			return false;
+		}
+		
+	}
 	public function guardaCursa($idh, $matricula){
     $agregar= $this->db->query("insert into cursa (idh, matricula) values ($idh, '$matricula')");
     if($this->db->affected_rows()>0){
@@ -182,6 +197,15 @@ class Alumno_model extends CI_Model {
 		$periodo= $this->session->userdata("periodo");
 		$turno=$this->session->userdata("turno");
 		$resultado=$this->db->query("SELECT h.idh, c.tr1, c.tr2, c.tr3, h.idmat, a.matricula, a.idt FROM cursa c, horario h, alumno a WHERE c.idh=h.idh AND a.matricula=c.matricula and a.idt=h.idmat AND h.idp='$periodo' AND h.turno='$turno' AND a.matricula='$matricula';");
+		return $resultado->row();
+	}
+	public function verCalme($matricula){
+		$periodo= $this->session->userdata("periodo");
+		$turno=$this->session->userdata("turno");
+		$resultado=$this->db->query("SELECT h.idh, c.tr1, c.tr2, c.tr3, h.idmat, a.matricula, a.idt 
+																	FROM cursa c, horario h, alumno a, materiaextra me
+																	WHERE c.idh=h.idh AND a.matricula=c.matricula AND me.idmat=h.idmat AND me.idt=a.idt 
+																	AND h.idp='$periodo' AND h.turno='$turno' AND a.matricula='$matricula';");
 		return $resultado->row();
 	}
 	public function verHorario($grado, $idt){

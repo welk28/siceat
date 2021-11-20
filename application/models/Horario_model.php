@@ -240,4 +240,16 @@ where g.idg=h.idg and p.rfcp=h.rfcp and h.idmat=m.idmat and h.idp='$periodo' and
 		
 		return $borra;
 	}
+	public function buscalumnos($grado,$idg){
+		$turno=$this->session->userdata("turno");
+		$consulta="SELECT * FROM alumno WHERE grado=$grado AND grupo='$idg' AND STATUS=1 and turno='$turno'";
+	
+		$resultado=$this->db->query($consulta)->result();
+		return $resultado;
+	}
+	public function datosmateria($idmat,$idh){
+		$consulta="SELECT * FROM horario h, materia m, personal p WHERE h.idmat=m.idmat AND h.rfcp=p.rfcp AND m.idmat='$idmat' AND h.idh=$idh;";
+		$resultado= $this->db->query($consulta);
+		return $resultado->row();
+	}
 }

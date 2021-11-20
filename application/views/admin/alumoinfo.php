@@ -50,7 +50,7 @@
 								<div class="col-sm-2">
 									<div class="form-group">
                   <input type="hidden" class="form-control" name="base_url" id="base_url" aria-describedby="helpId" placeholder="Matrícula" value="<?php echo base_url();?>admin/alumno/horalumno">
-                  <input type="text" class="form-control" name="matricula2" id="matricula2" aria-describedby="helpId" placeholder="Matrícula" onkeyup="this.value=this.value.toUpperCase()" value="<?php echo $a->matricula; ?>" required>
+                  <input type="hidden" class="form-control" name="matricula2" id="matricula2" aria-describedby="helpId" placeholder="Matrícula" onkeyup="this.value=this.value.toUpperCase()" value="<?php echo $a->matricula; ?>" required>
 										<input type="text" class="form-control" name="matricula" id="matricula" aria-describedby="helpId" placeholder="Matrícula" onkeyup="this.value=this.value.toUpperCase()" value="<?php echo $a->matricula; ?>" required>
 										<label for="">Matrícula</label>
 									</div>

@@ -46,7 +46,7 @@
                     <th width="">S</th>
                     <th width="">Fecnac</th>
                     <th width="">Ed</th>
-                    <th width="">Grado</th>
+                    <th width="">Grado/Gpo</th>
                     <th width="">Taller</th>
                     <th width=''>Horario/Datos/Boleta</th>
                   </tr>
@@ -76,7 +76,7 @@
                               echo $edad;
                             }
                           ?></td>
-                          <td><?php echo $alu->grado;?></td>
+                          <td><?php echo $alu->grado."".$alu->grupo;?></td>
                           <td><?php echo $alu->nomt;?></td>
                           <td align="center">
                             <div class="btn-group">

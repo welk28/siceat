@@ -10,6 +10,7 @@ class Materias extends CI_Controller {
 		}
 		$this->load->model("Docenteu_model");
 		$this->load->model("Altatrim_model");
+		$this->load->model("Docente_model");
 	}
 	public function index()
 	{
@@ -38,7 +39,8 @@ class Materias extends CI_Controller {
 		$data = array(
 			'domat' =>  $this->Docenteu_model->docentemat($idh),
 			'alumnos' =>  $this->Docenteu_model->gpomatcursa($idh),
-			'act' =>  $this->Altatrim_model->activoTrim()
+			'act' =>  $this->Altatrim_model->activoTrim(),
+			'taller' =>$this->Docente_model->matTaller($idh)
 		);
 		$this->load->view("layouts/header");
 		$this->load->view("docente/addcal",$data);

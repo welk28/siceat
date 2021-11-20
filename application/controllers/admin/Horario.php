@@ -9,6 +9,7 @@ class Horario extends CI_Controller {
 			redirect(base_url());
 		}
 		$this->load->model("Horario_model");
+		$this->load->model("Alumno_model");
 	}
 	public function index()
 	{
@@ -137,5 +138,26 @@ class Horario extends CI_Controller {
 		$res= $this->Horario_model->deleteHr($idh);
 
 		echo $res;
+	}
+	public function inscgpo(){
+		$idh= $this->input->post('idh');
+		$idmat= $this->input->post('idmat');
+		$grado= $this->input->post('grado');
+		$idg= $this->input->post('idg');
+		//buscar datos de la materia
+
+
+	
+		$data =array(
+			'alumnos' => $this->Horario_model->buscalumnos($grado,$idg),
+			'materia' => $this->Horario_model->datosmateria($idmat,$idh),
+			'grado' => $grado,
+			'grupo' => $idg,
+			'idh' => $idh
+		);
+		
+		$this->load->view("layouts/header");
+		$this->load->view("admin/igrupo",$data);
+		$this->load->view("layouts/footer");
 	}
 }

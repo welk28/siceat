@@ -44,6 +44,7 @@
                     <th>Jueves </th>
                     <th>Viernes </th>
                     <th align="center">Opciones</th>
+                    <th align="center">Insc</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -126,6 +127,22 @@
 															
                             </div>
                           </td>
+
+                          <td align="center">
+                            <div class="btn-group">
+                              <!-- <a href="#" class="btn btn-sm btn-primary" title="Ver">
+                                <span class="far fa-id-card"></span>
+                              </a> -->
+															<form id="" action="<?php echo base_url()?>admin/horario/inscgpo" method="post">
+																<input type="hidden" name="idmat" id="" value="<?php echo $ho->idmat;?>">
+																<input type="hidden" name="idh" id="" value="<?php echo $ho->idh;?>">
+																<input type="hidden" name="grado" id="" value="<?php echo $ho->grado;?>">
+																<input type="hidden" name="idg" id="" value="<?php echo $ho->grupo;?>">
+																<button type="submit" class="btn btn-sm btn-success" formtarget="_blank"><span class="fas fa-th-list"></span></button>
+															</form>
+															
+                            </div>
+                          </td>
                       </tr>
                     <?php endforeach;?>
                   <?php endif;?>  
@@ -141,6 +158,7 @@
                     <th>Jueves </th>
                     <th>Viernes </th>
                     <th align="center">Opciones</th>
+                    <th align="center">Insc</th>
                   </tr>
                   </tfoot>
                 </table>
