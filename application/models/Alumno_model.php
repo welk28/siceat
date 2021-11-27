@@ -127,7 +127,9 @@ class Alumno_model extends CI_Model {
   public function getAlumnosI($grado, $grupo){
 		$periodo= $this->session->userdata("periodo");
 		$turno=$this->session->userdata("turno");
-
+		print_r($grado);
+		print_r($grupo);
+		print_r($turno);
     $resultados=$this->db->query("select * from alumno where grado=$grado and grupo='$grupo' and turno='$turno' and status=1");
 		$resultados->result();
 
